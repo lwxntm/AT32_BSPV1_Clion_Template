@@ -1,4 +1,3 @@
-#此文件从模板自动生成! 请勿更改!
 set(CMAKE_SYSTEM_NAME Generic)
 set(CMAKE_SYSTEM_VERSION 1)
 cmake_minimum_required(VERSION 3.21)
@@ -14,7 +13,7 @@ set(SIZE arm-none-eabi-size)
 set(CMAKE_TRY_COMPILE_TARGET_TYPE STATIC_LIBRARY)
 
 # project settings
-project(FPU_TEST C CXX ASM)
+project(AT32 C CXX ASM)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_C_STANDARD 11)
 
@@ -25,12 +24,13 @@ set(CMAKE_C_STANDARD 11)
 
 #Uncomment for software floating point
 #add_compile_options(-mfloat-abi=soft)
-
+#优化等级
+add_compile_options(-O3)
 add_compile_options(-mcpu=cortex-m4 -mthumb -mthumb-interwork)
 add_compile_options(-ffunction-sections -fdata-sections -fno-common -fmessage-length=0)
 # uncomment to mitigate c++17 absolute addresses warnings
 #set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-register")
-add_compile_options(-O3)
+
 include_directories(
         User/inc
         StdPeriph_Driver/inc
