@@ -1,0 +1,2 @@
+#AT32_BSPV1_Clion_Template
+使用自己的linker文件时注意修改_estack的值为4字节对齐
